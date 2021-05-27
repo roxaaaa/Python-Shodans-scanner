@@ -1,18 +1,29 @@
 import os
 import shodan
 import sys
-print("coded my @mohammed")
-os.system("color a")
+from termcolor import colored
+from time import sleep
+n_str = "@roxaaaa\n"
+m_str = "a simple shodan scanner\n"
+for char in n_str:
+    #sys.stdout.write(char)
+
+    sys.stdout.flush()
+    sleep(0.1)
+sys.stdout.write(colored(n_str, 'red'))
+for tar in m_str:
+    sys.stdout.flush()
+    sleep(0.08)
+sys.stdout.write(colored(m_str, 'green'))
 
 
-
-print(f"[+] 1.shodan")
-question1 = input("menu > ").lower()
+print(colored("[+] 1.shodan", 'red'))
+question1 = input(colored("menu > ", 'blue')).lower()
 for lists in range(20):
 
     if question1 == "shodan":
         print("{+} 1.webcams\n{+} 2.apache2\n{+} 3.windows\n{+} 4.coustom\n{+} 5.extended")
-        question2 = input("shodan > ").lower()
+        question2 = input(colored("shodan > ", 'blue')).lower()
         if question2 == "1":
             command = os.system("shodan search webcam")
             print(command)
@@ -35,7 +46,8 @@ for lists in range(20):
                 resultat = api.search(input("enter phrases > "))
                 print(resultat)
             except shodan.APIError:
-                print("[-] incorrect API key!")
+                k_str = "[-] incorrect API key!"
+                print(colored(k_str, 'red'))
             finally:
                 print("[+] command completed")
         elif question2 == "exit" or "quit":
