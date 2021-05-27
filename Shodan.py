@@ -6,11 +6,12 @@ from time import sleep
 from pyfiglet import figlet_format
 
 # ASCII art
-art = figlet_format("@ROXA Shodan scanner")
-print(art)
+art = figlet_format("@ROXA")
+art2 = figlet_format("Shodan Scanner")
+print(colored(art, 'yellow'), colored(art2, 'blue'))
 
 
-# själva koden
+# själja koden
 n_str = "@roxaaaa\n"
 m_str = "a simple shodan scanner\n"
 for char in n_str:
@@ -36,16 +37,16 @@ for lists in range(20):
         question2 = input(colored("shodan > ", 'blue')).lower()
         if question2 == "1":
             command = os.system("shodan search webcam")
-            print(command)
+            print(colored(command, 'red'))
         elif question2 == "2":
             command = os.system("shodan search apache2")
-            print(command)
+            print(colored(command, 'blue'))
         elif question2 == "3":
             command = os.system("shodan search windows")
-            print(command)
+            print(colored(command, 'green'))
         elif question2 == "4":
             command = os.system("shodan search " + input("> "))
-            print(command)
+            print(colored(command, 'yellow'))
         elif question2 == "5":
             shodan_api_key = input("Skriv in ditt Shodan API key > ")
             api = shodan.Shodan(shodan_api_key)
@@ -54,7 +55,7 @@ for lists in range(20):
             try:
                 print("authenticating shodan kay", "*" * 6)
                 resultat = api.search(input("enter phrases > "))
-                print(resultat)
+                print(colored(resultat, 'aqua blue'))
             except shodan.APIError:
                 k_str = "[-] incorrect API key!"
                 print(colored(k_str, 'red'))
