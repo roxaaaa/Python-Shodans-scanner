@@ -3,6 +3,14 @@ import shodan
 import sys
 from termcolor import colored
 from time import sleep
+from pyfiglet import figlet_format
+
+# ASCII art
+art = figlet_format("@ROXA Shodan scanner")
+print(art)
+
+
+# själva koden
 n_str = "@roxaaaa\n"
 m_str = "a simple shodan scanner\n"
 for char in n_str:
@@ -15,7 +23,9 @@ for tar in m_str:
     sys.stdout.flush()
     sleep(0.08)
 sys.stdout.write(colored(m_str, 'green'))
-
+print()
+print()
+print()
 
 print(colored("[+] 1.shodan", 'red'))
 question1 = input(colored("menu > ", 'blue')).lower()
@@ -60,3 +70,4 @@ for lists in range(20):
     print()
     print()
     print()
+
